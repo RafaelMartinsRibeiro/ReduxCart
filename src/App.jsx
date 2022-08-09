@@ -1,18 +1,8 @@
 import { useReducer, useState } from "react";
 import "./App.css";
+import { reducer } from "./Reducers";
 
-const reducer = (state, action) => {
-  if (action.type === "SUBMIT") {
-    const newPeople = [...state.people, action.payload];
-    return { ...state, people: newPeople };
-  }
 
-  if (action.type === "CLEAR") {
-    return { people: [] };
-  }
-
-  throw new Error("No matching action type");
-};
 
 const defaultState = {
   people: [],
@@ -34,10 +24,6 @@ function App() {
     }
   };
 
-  const clearModal = () => {
-    dispatch({ type: "CLEAR" });
-  };
-
   return (
     <div className="App">
       <form onSubmit={handleSubmit} className="form">
@@ -49,13 +35,22 @@ function App() {
           />
         </div>
         <button type="submit">ADD</button>
-        <button type="button" onClick={clearModal}>
-          Clear
+        <button type="button" onClick={() => dispatch({ type: "CLEAR" })}>
+          Clear all
         </button>
       </form>
 
       {state.people.map((person) => {
-        return <div key={person.id}>{person.name}</div>;
+        return (
+          <div key={person.id}>
+            <p>{person.name}</p>
+            <button
+              onClick={() => dispatch({ type: "REMOVE", payload: person.id })}
+            >
+              Remove
+            </button>
+          </div>
+        );
       })}
     </div>
   );
