@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../features/cart/cartSlice";
+import { clearCart, removeItem } from "../features/cart/cartSlice";
 import { CartItem } from "./CartItem";
 
 export const CartContainer = () => {
@@ -21,7 +21,11 @@ export const CartContainer = () => {
             <h2>your bag</h2>
             <div>
               {cartItems.map((item) => (
-                <CartItem key={item.id} {...item} />
+                <CartItem
+                  
+                  key={item.id}
+                  {...item}
+                />
               ))}
             </div>
 
