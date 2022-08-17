@@ -22,6 +22,13 @@ const cartSlice = createSlice({
       const cartItem = state.cartItems.find((item) => item.id === payload);
       cartItem.amount += 1;
     },
+    decrease: (state, { payload }) => {
+      const cartItem = state.cartItems.find((item) => item.id === payload);
+      cartItem.amount -= 1;
+      if (cartItem.amount < 0) {
+        cartItem.amount = 0;
+      }
+    },
     
   },
 });
