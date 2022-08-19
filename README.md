@@ -70,7 +70,7 @@ Este projeto consiste em uma aplicação web 100% responsiva que tem como objeti
 # Clone este repositório
 $ git clone https://github.com/RafaelMartinsRibeiro/ReduxCart
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd Portfolio
+$ cd ReduxCart
 # Instale as dependências
 $ npm install || yarn install
 # Execute a aplicação em modo de desenvolvimento
