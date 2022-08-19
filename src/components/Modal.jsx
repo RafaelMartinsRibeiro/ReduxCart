@@ -9,7 +9,7 @@ export const Modal = () => {
   return (
     <aside className="modal-container">
       <div className="modal">
-        <h4>Remove all items from your shopping cart?</h4>
+        <h4>Deseja remover todos os itens do seu carrinho?</h4>
         <div className="btn-container">
           <button
             type="button"
@@ -19,14 +19,14 @@ export const Modal = () => {
               dispatch(closeModal());
             }}
           >
-            Confirm
+            Confirmar
           </button>
           <button
             type="button"
             className="btn clear-btn"
             onClick={() => dispatch(closeModal())}
           >
-            Cancel
+            Cancelar
           </button>
         </div>
       </div>

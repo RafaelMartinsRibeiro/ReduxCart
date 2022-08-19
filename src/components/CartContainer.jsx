@@ -18,14 +18,14 @@ export const CartContainer = () => {
       {amount < 1 ? (
         <section className="cart">
           <header>
-            <h2>your bag</h2>
-            <h4 className="empty-cart">is currently empty</h4>
+            <h2>seu carrinho</h2>
+            <h4 className="empty-cart">está vazio!</h4>
           </header>
         </section>
       ) : (
         <section className="cart">
           <header>
-            <h2>your bag</h2>
+            <h2>seu carrinho</h2>
             <div>
               {cartItems.map((item) => (
                 <CartItem key={item.id} {...item} />
@@ -36,7 +36,7 @@ export const CartContainer = () => {
               <hr />
               <div className="cart-total">
                 <h4>
-                  total <span>${total.toFixed(2)}</span>
+                  total <span>R${total.toFixed(2)}</span>
                 </h4>
               </div>
 
@@ -44,7 +44,7 @@ export const CartContainer = () => {
                 onClick={() => dispatch(openModal())}
                 className="btn clear-btn"
               >
-                clear cart
+                limpar carrinho
               </button>
             </footer>
           </header>
